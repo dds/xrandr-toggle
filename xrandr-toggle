@@ -168,7 +168,9 @@ class RandRState(object):
   def ParseXRandROutput(cls, xrandr_output):
     screen_re = re.compile(r'^Screen')
     display_re = re.compile(r'^(?P<name>\S+)\s+((?P<disconnected>dis))?'
-                            + r'connected\s+((?P<res_x>\d+)x(?P<res_y>\d+)'
+
+                            + r'connected\s+((?P<primary>primary)\s+)?'
+                            + r'((?P<res_x>\d+)x(?P<res_y>\d+)'
                             + r'\+(?P<pos_x>\d+)\+(?P<pos_y>\d+))?')
     mode_re = re.compile(r'^\s+(?P<res_x>\d+)x(?P<res_y>\d+)\s+\d+')
     state = cls()
