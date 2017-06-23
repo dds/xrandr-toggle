@@ -1,0 +1,21 @@
+* What is this?
+
+This is a script for binding to the XF86Display key for easy setup of external displays. It attempts to mimic the Windows 7 behavior.
+
+When there is only one display available, it sets it to be primary. When
+there is more than one display available, first it sets it to be on the
+left of the internal display. If run again, next it sets the external
+display to be on the right of the internal display. If run a third time, it
+sets the external display to be a clone of the internal display with the
+desktop size set as the maximum of the possible resolutions. Finally if run
+again (and as long as there is more than one display available) it goes
+back to the external display on the left of the internal.
+
+* How to install?
+
+  - Bind it to Fn-F7
+
+    * call it from /etc/acpi/videobtn.sh
+    * if you use KDE, configure a global shortcut to run it
+    * if you use a window manager other than metacity or kwin, bind it in
+      your window manager
