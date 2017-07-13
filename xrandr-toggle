@@ -168,7 +168,6 @@ class RandRState(object):
   def ParseXRandROutput(cls, xrandr_output):
     screen_re = re.compile(r'^Screen')
     display_re = re.compile(r'^(?P<name>\S+)\s+((?P<disconnected>dis))?'
-
                             + r'connected\s+((?P<primary>primary)\s+)?'
                             + r'((?P<res_x>\d+)x(?P<res_y>\d+)'
                             + r'\+(?P<pos_x>\d+)\+(?P<pos_y>\d+))?')
@@ -209,7 +208,6 @@ class RandRState(object):
           res = tuple((int(match.group(x)) for x in ('res_x', 'res_y')))
           state.AddConnected(display)
           state.SetResolution(display, res)
-          state.SetPosition(display, (0, 0))
           # only need one so might as well end the loop here
           break
     logging.debug('Parsed %s' % state)
